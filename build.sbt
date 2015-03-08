@@ -1,3 +1,5 @@
+import play.PlayImport._
+
 name := """playground"""
 
 version := "0.0.1-SNAPSHOT"

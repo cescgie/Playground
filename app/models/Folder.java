@@ -5,10 +5,6 @@ import models.base.BaseModel;
 import play.db.jpa.JPA;
 import java.util.List;
 
-/**
- * Created by meichris on 02.12.14.
- */
-
 @Entity
 @NamedQueries({
         @NamedQuery(name = Folder.QUERY_FETCH_ALL, query = "SELECT f FROM Folder f ORDER BY f.name"),

@@ -5,9 +5,6 @@ import models.Media;
 
 import java.util.List;
 
-/**
- * Created by meichris on 10.12.14.
- */
 public class MediaController {
 
     public static Long createMedia(String argName, Long argFolderID) {

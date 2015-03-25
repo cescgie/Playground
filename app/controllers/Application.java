@@ -72,13 +72,19 @@ public class Application extends Controller {
         FolderController.createFolder("Ordner xyz", folderID);
         return redirectFolder(folderID);
     }
-    
+    /*
+    @Transactional
+	public static Result createSpiel(Long folderID) {
+		//SpielController.createSpiel("Spiel1",folderID);
+		return redirectFolder(folderID);
+	}*/
 
     @Transactional
 	public static Result printAll() {
 		List<Media> media = JPA.em().createNamedQuery(Media.QUERY_FETCH_ALL).getResultList();
 		List<Folder> folder = JPA.em().createNamedQuery(Folder.QUERY_FETCH_ALL).getResultList();
-		return ok(views.html.list.render(folder,media));
+		List<Spiel> spiel = JPA.em().createNamedQuery(Spiel.QUERY_FETCH_ALL).getResultList();
+		return ok(views.html.list.render(folder,media,spiel));
 	}
 
 

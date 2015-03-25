@@ -1,5 +1,11 @@
 @(path: List[Folder], folder: Folder)
+@import helper._
 @main {
+    <!-- Start confirmCreateFolderModal -->
+    <div id="confirmCreateSpiel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        @views.html.snippets.createSpielModal(folder)
+    </div>
+    <!-- End confirmCreateFolderModal -->
 
     <h1>
         <p>
@@ -13,6 +19,10 @@
         @for(m <- folder.files) {
             @m.toAlternateString() <br>
         }
+
+        @for(s <- folder.files) {
+            @s.toAlternateString() <br>
+        }
         </p>
     </h1>
 
@@ -20,6 +30,6 @@
         <a class="btn success" href="@routes.Application.index()">index</a>
         <a class="btn success" href="@routes.Application.createMedia(folder.id)">createMedia</a>
         <a class="btn success" href="@routes.Application.createFolder(folder.id)">createFolder</a>
+        <a class="btn success" href="#confirmCreateSpiel" data-toggle="modal">createSpiel</a>
     </div>
-
 }

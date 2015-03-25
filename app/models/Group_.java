@@ -1,9 +1,5 @@
 package models;
 
-/**
- * Created by meichris on 03.12.14.
- */
-
 import models.base.BaseModel;
 import play.db.jpa.JPA;
 import javax.persistence.*;

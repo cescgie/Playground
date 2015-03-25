@@ -1,5 +1,6 @@
-@(folders: List[Folder],medias: List[Media])
+@(folders: List[Folder],medias: List[Media], spiels: List[Spiel])
 @main {
+    
     <h1>
         <p>
             @for(f <- folders) {
@@ -8,6 +9,10 @@
             <br>
             @for(m <- medias) {
                 @m.toAlternateString() <br>
+            }
+            <br>
+            @for(s <- spiels) {
+                @s.toAlternateString() <br>
             }
         </p>
     </h1>

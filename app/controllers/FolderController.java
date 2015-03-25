@@ -9,9 +9,6 @@ import play.db.jpa.JPA;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by meichris on 06.12.14.
- */
 public class FolderController {
 
 

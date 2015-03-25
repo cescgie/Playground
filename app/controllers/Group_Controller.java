@@ -6,9 +6,6 @@ import play.db.jpa.JPA;
 
 import java.util.List;
 
-/**
- * Created by meichris on 10.12.14.
- */
 public class Group_Controller {
 
     public static void createGroup(String argGroupName) {

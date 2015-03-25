@@ -9,7 +9,8 @@ GET    /folder/:id                    controllers.Application.listFolder(id:Long
 GET    /folder/:id/createMedia        controllers.Application.createMedia(id:Long)
 GET    /folder/:id/createFolder       controllers.Application.createFolder(id:Long)
 
+POST   /folder/:id/createSpiel	      controllers.SpielController.createSpiel(id:Long)
+
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
-
+GET     /assets/*file                 controllers.Assets.at(path="/public", file)

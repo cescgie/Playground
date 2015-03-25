@@ -20,6 +20,8 @@ import javax.persistence.PersistenceException;
  */
 public class Application extends Controller {
 
+
+
 	/**
 	 * Handle default path requests, redirect to computers list
 	 */
@@ -94,6 +96,7 @@ public class Application extends Controller {
 		Folder folder = f;
 		List<Folder> path = new ArrayList<Folder>();
 		List<Folder> pathTemp = new ArrayList<Folder>();
+
 		if (f == null)
 			return redirectFolderError("Ordner nicht vorhanden, wählen Sie einen anderen!");
 		while (f.depth > 1) {

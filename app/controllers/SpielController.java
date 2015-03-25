@@ -52,4 +52,15 @@ public class SpielController extends BaseController {
     public static Result redirectFolder(Long folderID) {
         return redirect("/folder/" + folderID);
     }
+
+    @Transactional
+    public static Result deleteSpiel(Long spielID) {
+        Logger.debug("use deleteSpiel");
+        Spiel spiel = Spiel.findById(spielID);
+        if(spiel != null) {
+            spiel.delete();
+            flash("success", "Datei \"" + spiel.name + "\" wurde erfolgreich gelöscht!");
+        }
+        return redirect("/");
+    }
 }

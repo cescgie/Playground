@@ -1,0 +1,20 @@
+@(spiel: Spiel)
+@import helper._
+@import models._
+
+    <div class="dropdown">
+        <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+
+        <ul class="dropdown-menu nav-pills" role="menu" aria-labelledby="dropdownMenu">
+
+            <li>
+                <a href="#confirmDeleteSpiel@spiel.id" data-toggle="modal">
+                    <span class="glyphicon glyphicon-trash"></span><br>Löschen
+                </a>
+            </li>
+
+        </ul>
+    </div>
+

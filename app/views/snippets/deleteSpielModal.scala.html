@@ -1,0 +1,21 @@
+@(spiel:Spiel)
+@import helper._
+@import models._
+
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="confirmModalLabel">Spiel löschen</h4>
+		</div>
+		<div class="modal-body">
+			Möchtest du den Ordner <b>@spiel.name</b> und den <b>gesamten</b> Inhalt wirklich löschen?
+		</div>
+		<div class="modal-footer">
+            @form(routes.SpielController.deleteSpiel(spiel.id)) {
+            <button type="submit" class="btn btn-warning">Ja</button>
+			<button type="reset" class="btn btn-default" data-dismiss="modal">Nein</button>
+            }
+		</div>
+	</div>
+</div>

@@ -1,5 +1,13 @@
 @(folders: List[Folder],medias: List[Media], spiels: List[Spiel])
 @main {
+
+    <!-- Start confirmDeleteFolderModal -->
+    @for(s <- spiels){
+        <div class="modal fade" id="confirmDeleteSpiel@s.id" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            @views.html.snippets.deleteSpielModal(s)
+        </div>
+    }
+    <!-- End confirmDeleteFolderModal -->
     
     <h1>
         <p>
@@ -10,12 +18,36 @@
             @for(m <- medias) {
                 @m.toAlternateString() <br>
             }
-            <br>
-            @for(s <- spiels) {
-                @s.toAlternateString() <br>
-            }
         </p>
     </h1>
+
+    <table class="table table-hover table-condensed">
+    <thead>
+        <tr>
+            <th style="width:10%">Id</th>
+            <th style="width:20%">Spiel</th>
+            <th style="width:20%">Player 1</th>
+            <th style="width:20%">Player 2</th>
+            <th id="optionen" style="width:10%"></th>
+        </tr>
+    </thead>
+
+        <tbody id="mediaList" class="hp-optionsTable">
+            @for(s <- spiels) {
+                <tr>
+                    <td>@s.id</td>
+                    <td>@s.name</td>
+                    <td>@s.player1</td>
+                    <td>@s.player2</td>
+                    <td>
+                        <a class="btn success" href="#confirmDeleteSpiel@s.id" data-toggle="modal">Löschen
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        </tfoot>
+    </table>
 
     <div>
         <a class="btn success" href="@routes.Application.index()">index</a>

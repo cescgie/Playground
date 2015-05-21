@@ -1,4 +1,4 @@
-This is a classic CRUD application, backed by a JDBC database. It demonstrates:
+This is a classic CRUD application with Java Play-Framework, backed by a JDBC database. It demonstrates:
 
 - Accessing a JDBC database, using Ebean.
 - Achieving, table pagination and CRUD forms.
